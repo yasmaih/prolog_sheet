@@ -1,0 +1,124 @@
+%jeudi 14 mars prolog
+
++ 
+-
+*
+/ 		div.flottante
+//		div entiere inferieure
+div 	division entier
+mod		
+
+cheat sheet
+
+division :
+?- X=17,Y=3,Z is X/Y.
+X = 17,
+Y = 3,
+Z = 5.666666666666667.
+
+le modulo 
+?- X=17,Y=3,Z is X mod Y.
+X = 17,
+Y = 3,
+Z = 2.
+
+la puissance : 
+?- X=2,Y=3, Z is X ^ Y. //on oeut aussi noter avec **
+X = 2,
+Y = 3,
+Z = 8.
+
+== 		le double egal signiffie que les deux parties doient etre 			identique
+
+
+\- 		signifie different de
+\== 
+not 	est la negatiin
+=<		infereur ou egal a 
+>= 		superieur ou egak a
+
+=:= 	comparatif des expressoions 
+
+
+
+var
+nonvar(X)	on peut effectivement utiliser des variables dans notre 			raisonnement qui n'auront pas de traitement specifique 
+			cela empche notre erreur de singleton var 
+
+
+
+
+
+__________
+
+//c'est un programme sans arguments dans lequel on va definir differents predicats pour demander a saisir une valeur, je ne veux pas 
+interpreter la valeur, mais juste pour l'afficher, on utilise display,
+display permet de saissir des chaines de caractere
+
+cube:-
+display("Veuillez saisir un nombre: "),
+read(X),
+calcule(X).
+
+
+Le principe de not est donne le contraire
+
+?- r(a).
+false.
+
+?- p(a).
+true.
+
+?- p(c).
+true.
+
+?- r(b).
+true.
+
+?- 
+
+
+%correction eval 
+
+?- [a,b,c]=[X,Y|Z].
+X = a,
+Y = b,
+Z = [c].
+
+?- [a,b,c]==[X,Y|Z].
+false.
+ car ce n'est pas identiquement pareil
+
+
+ ?- [X|Y]=[a,[a,b],c].
+X = a,
+Y = [[a, b], c].
+
+?- [X,Y]=[_|_].
+true.
+?- [X|Y]=[a,[a,b],c].
+X = a,
+Y = [[a, b], c].
+
+?- [X,Y]=[_|_].
+true.
+
+?- [X]=[_|_].
+true.
+
+?- [X]=[a].
+X = a.
+
+?- [X|Y]=[a].
+X = a,
+Y = [].
+
+[X,Y]=[_|_].
+true.
+
+?- [a,b]=[_|_].
+true.
+
+?- [X,Y]=[A|B].
+X = A,
+B = [Y].
